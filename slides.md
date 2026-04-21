@@ -394,18 +394,6 @@ Read the URL out loud. Give the audience ~30s to scan. Then start driving: add p
 -->
 
 ---
-hide: true
----
-
-# Demo backup
-
-<video src="/video/demo-backup.mp4" controls class="w-full max-w-4xl mx-auto" />
-
-<!--
-Hidden from normal flow. If the live demo fails, press `o` to open the slide overview, arrow to this slide. 30-second pre-recorded end-to-end run.
--->
-
----
 layout: center
 ---
 
@@ -429,4 +417,16 @@ layout: center
 
 <!--
 Thanks + Q&A. Leave the QR from slide 18 on screen if audience is still signing up.
+-->
+
+---
+hideInToc: true
+---
+
+# Demo backup
+
+<video src="/video/demo-backup.mp4" controls class="w-full max-w-4xl mx-auto" />
+
+<!--
+Hidden from the TOC; sits after the wrap slide so normal flow doesn't land on it. If the live demo fails, press `o` to open the slide overview and jump here, or type the slide number (21) + Enter. 30-second pre-recorded end-to-end run.
 -->
