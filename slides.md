@@ -411,10 +411,12 @@ layout: center
 
 # Thanks
 
-<div class="pt-4 text-lg">
+<div class="pt-4 text-lg space-y-2">
 
 **Pantry Party** — [pantryparty.lol](https://pantryparty.lol)
+
 **Source** — github.com/austingalyon/pantry-party
+
 **This deck** — [deck URL — fill in post-deploy]
 
 </div>
