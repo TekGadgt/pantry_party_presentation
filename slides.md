@@ -336,6 +336,49 @@ Point at the artifacts, don't read them. Magic-move makes the before/after obvio
 ---
 ---
 
+# Where it still trips
+
+Tonight, adding user-profile dietary restrictions. `@clerk/astro` at the page level plus multiple React islands, each wrapping its content in `<ClerkProvider>`:
+
+````md magic-move
+```tsx
+// ConvexClientProvider.tsx — multiple Clerk instances, silent UX breakage
+import { ClerkProvider, useAuth } from "@clerk/clerk-react";
+
+export default function ConvexClientProvider({ children }) {
+  return (
+    <ClerkProvider publishableKey={...}>
+      <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+        {children}
+      </ConvexProviderWithClerk>
+    </ClerkProvider>
+  );
+}
+```
+
+```tsx
+// ConvexClientProvider.tsx — @clerk/astro/react hooks, no provider
+import { useAuth } from "@clerk/astro/react";
+
+export default function ConvexClientProvider({ children }) {
+  return (
+    <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+      {children}
+    </ConvexProviderWithClerk>
+  );
+}
+```
+````
+
+Three frameworks, one right answer, zero obvious signal.
+
+<!--
+Real bug from tonight: @clerk/astro owns Clerk at the page level; each React island with its own ClerkProvider spawns a duplicate instance. Fix: drop the provider, pull useAuth from @clerk/astro/react. Honest: the tools didn't get us here on the first try.
+-->
+
+---
+---
+
 # What still hurts / what works
 
 **Still hard**
