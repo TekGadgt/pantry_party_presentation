@@ -397,3 +397,27 @@ hide: true
 <!--
 Hidden from normal flow. If the live demo fails, press `o` to open the slide overview, arrow to this slide. 30-second pre-recorded end-to-end run.
 -->
+
+---
+layout: center
+---
+
+# Thanks
+
+<div class="pt-4 text-lg">
+
+**Pantry Party** — [pantryparty.lol](https://pantryparty.lol)
+**Source** — github.com/austingalyon/pantry-party
+**This deck** — [deck URL — fill in post-deploy]
+
+</div>
+
+<div class="pt-12 text-sm opacity-60">
+  Ryan · Austin · NorfolkJS 2026
+</div>
+
+<div class="pt-8 text-3xl">Questions?</div>
+
+<!--
+Thanks + Q&A. Leave the QR from slide 18 on screen if audience is still signing up.
+-->
