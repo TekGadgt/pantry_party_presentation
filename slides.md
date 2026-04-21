@@ -358,3 +358,42 @@ Point at the artifacts, don't read them. Magic-move makes the before/after obvio
 <!--
 Balanced. Don't oversell. This calibrates the audience's trust for the rest of the talk.
 -->
+
+---
+layout: center
+---
+
+# Try it yourself
+
+<div class="grid grid-cols-2 gap-12 items-center pt-4">
+  <div>
+    <img src="/photos/qr-room.png" class="w-72 mx-auto rounded bg-white p-2" />
+    <div class="text-center pt-4 text-xl font-mono">
+      pantryparty.lol/room/XXXX
+    </div>
+    <div class="text-center pt-2 text-sm opacity-60">
+      Sign up (username / password), join the room, add ingredients.
+    </div>
+  </div>
+  <iframe
+    src="https://pantryparty.lol/"
+    class="w-full h-96 rounded-lg border border-gray-300"
+    sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+  />
+</div>
+
+<!--
+Read the URL out loud. Give the audience ~30s to scan. Then start driving: add pre-seed ingredients, trigger recipes, vote live. The iframe reflects the live site so they can see real-time updates even before they've signed up.
+-->
+
+---
+hide: true
+---
+
+# Demo backup
+
+<video src="/video/demo-backup.mp4" controls class="w-full max-w-4xl mx-auto" />
+
+<!--
+Hidden from normal flow. If the live demo fails, press `o` to open the slide overview, arrow to this slide. 30-second pre-recorded end-to-end run.
+-->
