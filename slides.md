@@ -363,13 +363,20 @@ Balanced. Don't oversell. This calibrates the audience's trust for the rest of t
 layout: center
 ---
 
+<script setup>
+import QrcodeVue from 'qrcode.vue'
+const roomUrl = 'https://pantryparty.lol/room/XXXX'
+</script>
+
 # Try it yourself
 
 <div class="grid grid-cols-2 gap-12 items-center pt-4">
   <div>
-    <img src="/photos/qr-room.png" class="w-72 mx-auto rounded bg-white p-2" />
+    <div class="w-72 mx-auto rounded bg-white p-4 flex items-center justify-center">
+      <QrcodeVue :value="roomUrl" :size="256" level="H" />
+    </div>
     <div class="text-center pt-4 text-xl font-mono">
-      pantryparty.lol/room/XXXX
+      {{ roomUrl.replace('https://', '') }}
     </div>
     <div class="text-center pt-2 text-sm opacity-60">
       Sign up (username / password), join the room, add ingredients.
