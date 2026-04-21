@@ -60,7 +60,7 @@ pantry_party_presentation/
 
 ## Slide flow
 
-~20 slides, ~20 minutes. Soft speaker leans noted; handoffs are fluid.
+~20 slides, ~20 minutes (4 opening + 5 build + 4 sidebar + 6–8 demo + 1 wrap). Soft speaker leans noted; handoffs are fluid.
 
 ### Opening / The Setup (~4 min, Ryan + Austin)
 
@@ -71,7 +71,9 @@ pantry_party_presentation/
 5. **The Convex pivot** — "we walked in planning plain websockets"; Jason suggested Convex; we adopted a real-time DB neither of us had touched
 6. **Tech stack roll call** — logo grid: Astro, React, Convex, Clerk, OpenAI, Tailwind
 
-### The Build (~7 min, Austin leads)
+### The Build (~5 min, Austin leads)
+
+Trimmed from original 7 min to give the demo room to breathe. Stay crisp — one beat per slide.
 
 7. **CodeTV B-roll clip** — setting the scene
 8. **What Copilot agent mode did well** — scaffolding individual pieces: Astro page, Convex schema, Clerk setup, OpenAI call
@@ -88,9 +90,9 @@ pantry_party_presentation/
 16. **Case-study evidence** — auth hardening: spec → plan → commit chain screenshots from `pantry-party` repo. Slidev magic-move for middleware before/after.
 17. **Honest take** — what AI still struggles with, what's surprisingly good, what changed day-to-day
 
-### The Demo (~4–5 min, either driver)
+### The Demo (~6–8 min, either driver)
 
-18. **Try it yourself** — big QR code linking to `https://pantryparty.lol/join-room` with a pre-created room code, live iframe embed of the site below the QR. Audience signs up with username/password (fast path; ~15–20s per user) and joins the shared room. Slide stays up while the presenter drives the audience through: adding ingredients → triggering recipe generation → voting live. The connected-users display on the site updates in real time.
+18. **Try it yourself** — big QR code linking to `https://pantryparty.lol/room/<code>` (the direct room URL; Clerk's auth modal triggers on the way in and returns the user to the room post-signup). Same URL printed in large text beneath the QR as a scan fallback. Live iframe embed of the site below that. Audience signs up with username/password (fast path; ~15–20s per user, parallelized). Slide stays up while the presenter drives the audience through: adding ingredients → triggering recipe generation → voting live. The connected-users display updates in real time.
 19. **Backup clip (hidden)** — 30-second pre-recorded end-to-end demo, revealable on demand if live site misbehaves. Not shown in normal flow.
 
 ### Wrap (~1 min)
@@ -99,13 +101,13 @@ pantry_party_presentation/
 
 ## Audience-demo design
 
-**Primary path:** Audience joins for real via username/password signup on pantryparty.lol. The iframe on slide #18 shows the live site; QR code drives traffic.
+**Primary path:** Audience joins for real. QR code (and matching printed URL) on slide #18 point directly to `https://pantryparty.lol/room/<code>`. Unauthenticated users hit Clerk's auth modal, complete u/p signup (~15–20s), and are returned to the room. The iframe on slide #18 shows the live site so the audience can see real-time updates even before they've joined.
 
-**Auth friction:** Sign-up is u/p (no OAuth gate, no email verification needed for demo purposes). Expect ~15–20 seconds per user.
+**Auth friction:** Sign-up is u/p (no OAuth gate, no email verification needed for demo purposes). Expect ~15–20 seconds per user, parallelized across the room.
+
+**Pre-seed:** Presenter creates the demo room before going on stage and pre-seeds it with a handful of ingredients (so the recipe-generation payoff is fast even if audience contribution is light). Dietary constraints set reasonable defaults. Room code/URL hardcoded into slide #18.
 
 **Backup path:** If live site misbehaves, a 30-second pre-recorded demo clip lives on slide #19 — revealable on demand via Slidev navigation without breaking the normal click flow.
-
-**Pre-flight:** Presenter creates a room before going on stage. Room link / code goes on the slide so audience joins directly instead of creating their own.
 
 ## Failure modes & mitigations
 
@@ -116,7 +118,7 @@ pantry_party_presentation/
 | OpenAI is slow / rate-limited | Trigger recipe generation before the demo slide, or have a pre-generated room ready |
 | Video clips don't play | Static fallback image (representative frame) behind each `<video>` tag |
 | Presenter laptop drops | Deck on shareable Netlify URL; other presenter drives from their laptop |
-| QR code doesn't scan | Short URL (`pantryparty.lol`) printed beneath the QR |
+| QR code doesn't scan | Full room URL (`pantryparty.lol/room/<code>`) printed beneath the QR — same destination as the QR |
 | Clerk sign-up fails for a user | Not a talk-blocker; presenters keep driving; mention as a known rough edge |
 
 ## Speaker notes
@@ -127,7 +129,8 @@ Slidev supports per-slide notes in `<!-- ... -->` blocks at slide foot; render o
 
 - Full run-through end-to-end from both laptops
 - Time each section; cut content if over by >3 min
-- Dry-run the audience demo with 2–3 people joining from phones to sanity-check the flow
+- Dry-run the audience demo with 2–3 live people joining from phones to sanity-check the flow
+- Concurrency dry-run: emulate 10–15 simultaneous joins using multiple browsers / incognito windows / secondary devices between the two speakers. Exercises Clerk signup burst, Convex subscription scale, and UI behavior under load that 2–3 phones won't surface. Run at least once the week before the talk.
 
 ## Assets checklist
 
