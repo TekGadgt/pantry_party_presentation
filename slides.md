@@ -235,3 +235,126 @@ class: bg-black text-white
 <!--
 Ship-it energy. Transition out of the build segment and into "then vs. now."
 -->
+
+---
+layout: center
+class: text-center
+---
+
+# Then → Now
+
+<div class="text-sm opacity-60 mt-8">What changed in five months</div>
+
+<!--
+Beat pause. Pivot into the second half of the talk. Ryan takes over (soft lean).
+-->
+
+---
+layout: two-cols
+---
+
+# Then
+
+**Nov 2025**
+
+GitHub Copilot agent mode
+
+- Mix of Anthropic + OpenAI models under the hood
+- Best tool available that day
+- Great at generating files
+- Struggled to cross systems
+
+::right::
+
+# Now
+
+**Apr 2026**
+
+Claude Code
+
+- Daily driver
+- Plans, specs, commits, reviews
+- Same class of models, better harness
+
+<!--
+Don't overstate. Same models, different ergonomics. Set up the next slide.
+-->
+
+---
+layout: center
+---
+
+# The gap that closed
+
+<div class="text-6xl py-8 font-bold">integration</div>
+
+The exact thing that cost us hours during the build  
+is the thing that's most different now.
+
+<!--
+The thesis slide of the sidebar. Deliver it slowly. Pause after "integration."
+-->
+
+---
+---
+
+# Evidence: auth hardening
+
+Three artifacts in the `pantry-party` repo, all produced in one session:
+
+- **Spec** — `docs/superpowers/specs/2026-04-20-auth-hardening-design.md`
+- **Plan** — `docs/superpowers/plans/2026-04-20-auth-hardening.md`
+- **Commits** — `3abd7c5`, `5af3a3c`, `e6ac57f`, ... (small, narrated, reviewable)
+
+````md magic-move
+```ts
+// src/middleware.ts — before
+// (no middleware; /room routes unprotected)
+```
+
+```ts
+// src/middleware.ts — after
+import { clerkMiddleware, createRouteMatcher } from "@clerk/astro/server";
+
+const isProtectedRoute = createRouteMatcher(["/room(.*)", "/create-room"]);
+
+export const onRequest = clerkMiddleware((auth, context, next) => {
+  if (isProtectedRoute(context.request) && !auth().userId) {
+    return auth().redirectToSignIn();
+  }
+  return next();
+});
+```
+````
+
+One prompt. Cross-system wiring. PR-ready.
+
+<!--
+Point at the artifacts, don't read them. Magic-move makes the before/after obvious.
+-->
+
+---
+---
+
+# What still hurts / what works
+
+**Still hard**
+
+- Multi-service env var drift (same as before)
+- Novel stacks with tiny training footprints
+- UI polish judgment calls
+
+**Surprisingly good**
+
+- Following an explicit plan to the letter
+- Refactors across 10+ files
+- Catching its own mistakes on a re-read
+
+**Day-to-day change**
+
+- Prompt → diff is faster than scaffold → wire
+- More time designing, less time plumbing
+
+<!--
+Balanced. Don't oversell. This calibrates the audience's trust for the rest of the talk.
+-->
