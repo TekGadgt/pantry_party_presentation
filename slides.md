@@ -110,3 +110,128 @@ layout: center
 <!--
 Name them fast. Hand off to Austin for the build segment.
 -->
+
+---
+layout: center
+class: bg-black text-white
+---
+
+<div class="opacity-60 text-sm">[ B-roll clip placeholder — swap with &lt;video src="/video/codetv-broll.mp4" autoplay muted loop /&gt; when clip is ready ]</div>
+
+<!--
+Let the clip play for ~15s. Sets room energy before we start talking shop.
+-->
+
+---
+---
+
+# What Copilot agent mode nailed
+
+Each of these landed on the first try:
+
+- Astro page + layout scaffolding
+- Convex `schema.ts` — rooms, ingredients, recipes, votes
+- Clerk setup — middleware, protected routes
+- OpenAI recipe-generation action
+
+<v-click>
+
+<div class="pt-8 text-xl opacity-80">
+Isolated pieces? Excellent.
+</div>
+
+</v-click>
+
+<!--
+Don't dunk on Copilot. The scaffolding work genuinely saved us hours.
+-->
+
+---
+---
+
+# Where it fell apart
+
+```mermaid
+graph LR
+  Clerk -->|"auth 🔴"| Convex
+  UI -->|"query 🔴"| Convex
+  Convex -->|"action 🔴"| OpenAI
+  OpenAI -->|"recipes 🔴"| Convex
+  Convex -->|"real-time 🔴"| UI
+```
+
+The boxes worked. The **wiring** between them is where we bled hours.
+
+<!--
+The pivot slide of the build section. Emphasize: scaffolding good, integration hard.
+-->
+
+---
+---
+
+# Example: auth token didn't flow
+
+Copilot scaffolded Clerk and Convex auth config separately. Wiring them together:
+
+````md magic-move
+```ts
+// convex/auth.config.ts
+export default {
+  providers: [
+    {
+      domain: "clerk-jwt-issuer-hardcoded-here",
+      applicationID: "convex",
+    },
+  ],
+};
+```
+
+```ts
+// convex/auth.config.ts
+export default {
+  providers: [
+    {
+      domain: process.env.CLERK_JWT_ISSUER_DOMAIN,
+      applicationID: "convex",
+    },
+  ],
+};
+```
+````
+
+One env var. Twenty minutes of Googling.
+
+<!--
+Concrete, representative. Not the only integration bug, but the cleanest to show on stage.
+-->
+
+---
+---
+
+# The last 30 minutes
+
+- Env vars not propagating to Netlify
+- Convex prod deployment ≠ dev deployment
+- Clerk JWT issuer URL mismatched between environments
+- Recipe generation failing silently on prod
+
+<v-click>
+
+<div class="pt-6 text-xl">What fixed it: a lot of manual copying.</div>
+
+</v-click>
+
+<!--
+War stories. Keep it tight and a little funny. Don't wallow.
+-->
+
+---
+layout: center
+class: bg-black text-white
+---
+
+<div class="opacity-60 text-sm">[ Final push clip placeholder — swap with &lt;video src="/video/codetv-final-push.mp4" autoplay muted loop /&gt; ]</div>
+
+<!--
+Ship-it energy. Transition out of the build segment and into "then vs. now."
+-->
