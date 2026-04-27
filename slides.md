@@ -338,29 +338,21 @@ Lead with calibration ("real work has bugs"). Close with the docs-commit punchli
 -->
 
 ---
+layout: center
 ---
 
-# What still hurts / what works
+# What this changed
 
-**Still hard**
+<div class="text-3xl py-8 max-w-3xl mx-auto">
+Prompt → diff is faster than scaffold → wire.
+</div>
 
-- Multi-service env var drift (same as before)
-- Novel stacks with tiny training footprints
-- UI polish judgment calls
-
-**Surprisingly good**
-
-- Following an explicit plan to the letter
-- Refactors across 10+ files
-- Catching its own mistakes on a re-read
-
-**Day-to-day change**
-
-- Prompt → diff is faster than scaffold → wire
-- More time designing, less time plumbing
+<div class="text-base opacity-60">
+More time designing. Less time plumbing.
+</div>
 
 <!--
-Balanced. Don't oversell. This calibrates the audience's trust for the rest of the talk.
+Single observation. Don't make it a thesis — the features have already done the arguing. (Final wording per spec Open Question #4: alternatives are "The shift wasn't model IQ; it was process rigor." or "More time designing, less time plumbing." Pick before the talk.)
 -->
 
 ---
