@@ -39,9 +39,9 @@ Quick primer on the CodeTV format. Don't dwell — audience gets the shape.
 layout: two-cols
 ---
 
-# Pantry Party
+# What we shipped on camera
 
-Collaborative rooms where people:
+Pantry Party — collaborative rooms where people:
 
 - 🥗 Pool pantry ingredients
 - 🤖 Generate AI recipes
@@ -53,7 +53,7 @@ Collaborative rooms where people:
 <img src="/photos/placeholder-hero.svg" class="rounded-lg shadow-xl" />
 
 <!--
-The concept in one paragraph. If a video clip is ready, swap image src to /video/<file>.mp4 with a <video> tag.
+Past tense — this is what shipped on the episode. Audience may already know it from the show. If a video clip is ready, swap image src to /video/<file>.mp4 with a <video> tag.
 -->
 
 ---
