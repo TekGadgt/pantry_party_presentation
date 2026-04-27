@@ -218,22 +218,13 @@ Three feature ships in a week. Pattern, not anecdote. The "all on 2026-04-20" li
 ---
 ---
 
-# Evidence: auth hardening
+# Feature 1: Auth hardening
 
-Three artifacts in the `pantry-party` repo, all produced in one session:
-
-- **Spec** — `docs/superpowers/specs/2026-04-20-auth-hardening-design.md`
-- **Plan** — `docs/superpowers/plans/2026-04-20-auth-hardening.md`
-- **Commits** — `3abd7c5`, `5af3a3c`, `e6ac57f`, ... (small, narrated, reviewable)
+Spec listed four goals: route protection, backend auth re-enabling, provider dedupe, env-driven config.
 
 ````md magic-move
 ```ts
-// src/middleware.ts — before
-// (no middleware; /room routes unprotected)
-```
-
-```ts
-// src/middleware.ts — after
+// src/middleware.ts — what we spec'd first
 import { clerkMiddleware, createRouteMatcher } from "@clerk/astro/server";
 
 const isProtectedRoute = createRouteMatcher(["/room(.*)", "/create-room"]);
@@ -245,55 +236,105 @@ export const onRequest = clerkMiddleware((auth, context, next) => {
   return next();
 });
 ```
+
+```tsx
+// src/components/AuthGate.tsx — what we shipped instead
+import { useAuth } from "@clerk/astro/react";
+import { useEffect } from "react";
+
+export default function AuthGate({ children }) {
+  const { isLoaded, isSignedIn } = useAuth();
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) (window as any).Clerk?.openSignIn();
+  }, [isLoaded, isSignedIn]);
+  if (!isLoaded) return <div>Loading...</div>;
+  if (!isSignedIn) return <div>Please sign in to continue.</div>;
+  return <>{children}</>;
+}
+```
 ````
 
-One prompt. Cross-system wiring. PR-ready.
+3 of 4 shipped clean. Route protection backed off — `redirectToSignIn()` is a full-page redirect that broke our modal sign-in UX. Swapped to a client-side gate.
 
 <!--
-Point at the artifacts, don't read them. Magic-move makes the before/after obvious.
+Two-beat. The magic-move tells the truth: spec'd middleware → shipped AuthGate. The workflow surfaced a real constraint at execution time, not at design time. Don't gloss the rollback — that's the most interesting beat in the deck.
 -->
 
 ---
 ---
 
-# Where it still trips
+# Feature 2: AI provider toggle
 
-Tonight, adding user-profile dietary restrictions. `@clerk/astro` at the page level plus multiple React islands, each wrapping its content in `<ClerkProvider>`:
+A per-room switch between OpenAI and Claude.
 
 ````md magic-move
-```tsx
-// ConvexClientProvider.tsx — multiple Clerk instances, silent UX breakage
-import { ClerkProvider, useAuth } from "@clerk/clerk-react";
-
-export default function ConvexClientProvider({ children }) {
-  return (
-    <ClerkProvider publishableKey={...}>
-      <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-        {children}
-      </ConvexProviderWithClerk>
-    </ClerkProvider>
-  );
-}
+```ts
+// convex/schema.ts
+rooms: defineTable({
+  // ...
+  aiProvider: v.optional(
+    v.union(v.literal("openai"), v.literal("claude")),
+  ),
+});
 ```
 
-```tsx
-// ConvexClientProvider.tsx — @clerk/astro/react hooks, no provider
-import { useAuth } from "@clerk/astro/react";
-
-export default function ConvexClientProvider({ children }) {
-  return (
-    <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-      {children}
-    </ConvexProviderWithClerk>
-  );
-}
+```ts
+// convex/recipeGeneration.ts
+const provider = room.aiProvider ?? "openai";
+const recipes = provider === "claude"
+  ? await generateWithClaude(prompt)
+  : await generateWithOpenAI(prompt);
 ```
 ````
 
-Three frameworks, one right answer, zero obvious signal.
+Schema field · `@anthropic-ai/sdk` · UI toggle · provider badge on each recipe card.
+
+<div class="pt-4 text-sm opacity-60 italic">
+We used Claude Code to add Claude support.
+</div>
 
 <!--
-Real bug from tonight: @clerk/astro owns Clerk at the page level; each React island with its own ClerkProvider spawns a duplicate instance. Fix: drop the provider, pull useAuth from @clerk/astro/react. Honest: the tools didn't get us here on the first try.
+Most demo-friendly feature — the audience will see the badges flip live in the demo. Meta-aside lands in one breath; don't dwell.
+-->
+
+---
+---
+
+# Feature 3: Dietary profiles
+
+Persistent user preferences merged into recipe prompts.
+
+- New `userProfiles` Convex table
+- Modal triggered from the navbar
+- Locked chips in the constraints form (with overrides)
+- Union-merged into prompts at generation time
+
+<v-click>
+
+<div class="pt-6 text-base opacity-80 max-w-3xl">
+Mid-feature, we hit a <code>@clerk/astro</code> multi-island bug — each React island wrapping its content in <code>&lt;ClerkProvider&gt;</code> from <code>@clerk/clerk-react</code> spawned a duplicate Clerk instance. Real work has bugs.
+</div>
+
+</v-click>
+
+<v-click>
+
+<div class="pt-4 text-base">
+Switched to <code>useAuth</code> from <code>@clerk/astro/react</code>. Then we wrote it up:
+</div>
+
+<div class="pt-2 font-mono text-base">
+docs/clerk-astro-react-islands.md
+</div>
+
+<div class="pt-2 text-sm opacity-70 italic">
+Bug → fix → docs commit. The next person who hits this skips the loop.
+</div>
+
+</v-click>
+
+<!--
+Lead with calibration ("real work has bugs"). Close with the docs-commit punchline. The integration guide is a real artifact — pantry-party commit 581b1c7. Two click reveals so the calibration lands before the punchline.
 -->
 
 ---
