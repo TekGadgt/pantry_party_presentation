@@ -350,13 +350,19 @@ const recipes = provider === "claude"
 ```
 ````
 
-Schema field · `@anthropic-ai/sdk` · UI toggle · provider badge on each recipe card.
+<div class="pt-2 text-base opacity-80 max-w-2xl">
 
-<div class="pt-4 text-sm opacity-60 italic">
-We used Claude Code to add Claude support.
+- Schema field
+- `@anthropic-ai/sdk`
+- UI toggle
+- Provider badge on each recipe card
+
 </div>
 
+
 <!--
+We used Claude Code to add Claude support.
+
 Most demo-friendly feature — the audience will see the badges flip live in the demo. Meta-aside lands in one breath; don't dwell.
 -->
 
