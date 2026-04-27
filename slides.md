@@ -472,9 +472,9 @@ layout: center
 
 **Pantry Party** — [pantryparty.lol](https://pantryparty.lol)
 
-**Source** — github.com/austingalyon/pantry-party
+**Source** — [github.com/austingalyon/pantry-party](https://github.com/austingalyon/pantry-party)
 
-**This deck** — [deck URL — fill in post-deploy]
+**This deck** — [pantry-party-presentation.netlify.app](https://pantry-party-presentation.netlify.app)
 
 </div>
 
