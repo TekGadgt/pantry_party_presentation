@@ -46,16 +46,15 @@ Hi I'm Austin, etc
 ---
 layout: about-me
 
-helloMsg: Hello!
+helloMsg: Howdy!
 name: Ryan McGovern
-imageSrc: <image url>
+imageSrc: /photos/IMG_3831.jpg
 position: right
 job: Software Engineer
-line1: 
-line2: 
-social1: 
-social2: 
-social3: 
+line1: "The AI Collective"
+line2: "cssdaily.dev"
+social1: "@tekgadgt(.dev) ryanmcgovern.dev"
+social2: "cal.com/tekgadgt ryan@tekgadgt.com"
 ---
 
 <!--
