@@ -32,15 +32,19 @@ name: Austin Galyon
 imageSrc: /photos/ag-webdev-cropped.jpeg
 position: left
 job: Software Engineer
-line1: 
-line2: 
-social1: 
-social2: 
-social3: 
+line1: "@<Your_Company_Here>"
+line2: "Previously: Handshake"
+social1: "@AustinGalyon"
+social2: "linkedin.com/in/AustinGalyon"
+social3: "galyon.tech (like tomorrow lol)"
 ---
 
 <!--
-Hi I'm Austin, etc
+Hey y'all! I'm Austin. 
+
+Been in software engineering for over 8 years, most recently for 5 at Handshake, but I'm looking for a new role so if you or someone you know could benefit from my experience, let's talk!
+
+I'm @austingalyon on pretty much everything, and you can find my personal site at galyon.tech, but not right this second because I ran out of time getting it all wired up, so it will probably be live later tonight or tomorrow.
 -->
 
 ---
