@@ -25,6 +25,44 @@ If a CodeTV thumbnail screenshot becomes available, swap to a `layout: image` wi
 -->
 
 ---
+layout: about-me
+
+helloMsg: Hey Y'all!
+name: Austin Galyon
+imageSrc: <image url>
+position: left
+job: Software Engineer
+line1: 
+line2: 
+social1: 
+social2: 
+social3: 
+---
+
+<!--
+Hi I'm Austin, etc
+-->
+
+---
+layout: about-me
+
+helloMsg: Hello!
+name: Ryan McGovern
+imageSrc: <image url>
+position: right
+job: Software Engineer
+line1: 
+line2: 
+social1: 
+social2: 
+social3: 
+---
+
+<!--
+Hi I'm Ryan, etc
+-->
+
+---
 layout: center
 ---
 
