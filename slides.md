@@ -175,10 +175,14 @@ At the end of 4 hours we had:
 
 <div class="pt-4 text-lg max-w-2xl mx-auto text-left">
 
+<v-clicks>
+
 - Backend auth checks commented out (`tempUserId` hack in `addIngredient`)
 - Clerk JWT issuer hardcoded
 - `ConvexClientProvider` duplicated across 4 files
 - Env vars manually copied around
+
+</v-clicks>
 
 </div>
 
