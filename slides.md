@@ -3,7 +3,7 @@ theme: the-unnamed
 title: Pantry Party — NorfolkJS
 info: 670K people watched us vibe code (and what we did about it)
 class: text-center
-background: /photos/qYx8NX49OS8-HD.jpg
+background: /photos/youtube-thumbnail.jpg
 ---
 
 # 670K people watched us vibe code
@@ -29,18 +29,22 @@ layout: about-me
 
 helloMsg: Hey Y'all!
 name: Austin Galyon
-imageSrc: <image url>
+imageSrc: /photos/ag-webdev-cropped.jpeg
 position: left
 job: Software Engineer
-line1: 
-line2: 
-social1: 
-social2: 
-social3: 
+line1: "@<Your_Company_Here>"
+line2: "Previously: Handshake"
+social1: "@AustinGalyon"
+social2: "linkedin.com/in/AustinGalyon"
+social3: "galyon.tech (like tomorrow lol)"
 ---
 
 <!--
-Hi I'm Austin, etc
+Hey y'all! I'm Austin. 
+
+Been in software engineering for over 8 years, most recently for 5 at Handshake, but I'm looking for a new role so if you or someone you know could benefit from my experience, let's talk!
+
+I'm @austingalyon on pretty much everything, and you can find my personal site at galyon.tech, but not right this second because I ran out of time getting it all wired up, so it will probably be live later tonight or tomorrow.
 -->
 
 ---
@@ -63,15 +67,16 @@ Hi I'm Ryan, etc
 
 ---
 layout: center
+# layout: default
+# background: /photos/251114-webdev-s2e13-4G7A2707.jpg
 ---
 
-# CodeTV's rules
+# CodeTV's Web Dev Challenge
+Build an app that's so delightful, you can't help but share it 
 
 - **30 minutes** to plan
 - **4 hours** to build
 - Ship something **shareable**
-
-<div class="pt-8 text-sm opacity-60">Full-stack challenge episode</div>
 
 <!--
 Quick primer on the CodeTV format. Don't dwell — audience gets the shape.
@@ -81,7 +86,9 @@ Quick primer on the CodeTV format. Don't dwell — audience gets the shape.
 layout: two-cols
 ---
 
-# What we shipped on camera
+<div class="h-full flex flex-col justify-center">
+
+# What we shipped
 
 Pantry Party — collaborative rooms where people:
 
@@ -90,16 +97,22 @@ Pantry Party — collaborative rooms where people:
 - 🗳️ Vote on favorites
 - ⚡ See updates in real time
 
+</div>
+
 ::right::
 
-<img src="/photos/placeholder-hero.svg" class="rounded-lg shadow-xl" />
+<div class="h-full flex flex-col justify-center">
+
+<img src="/photos/Pantry-Party-Screenshot.png" class="rounded-lg shadow-xl" style="margin-left: 1em;"/>
+
+</div>
 
 <!--
 Past tense — this is what shipped on the episode. Audience may already know it from the show. If a video clip is ready, swap image src to /video/<file>.mp4 with a <video> tag.
 -->
 
 ---
-layout: quote
+layout: center
 ---
 
 # "Just use plain websockets."
@@ -108,7 +121,7 @@ _— us, that morning_
 
 <v-click>
 
-## "Have you tried Convex?"
+# "Have you tried Convex?"
 
 _— Jason, 15 minutes in_
 
@@ -116,7 +129,7 @@ _— Jason, 15 minutes in_
 
 <v-click>
 
-We adopted a real-time database neither of us had touched.
+<div class="text-lg opacity-75 italic">We adopted a real-time database neither of us had touched.</div>
 
 </v-click>
 
@@ -140,8 +153,12 @@ class: bg-black text-white
 
 <v-click>
 
-<div class="pt-8 text-base opacity-70 max-w-2xl mx-auto text-left">
-  Env vars not propagating · Convex prod ≠ dev · Clerk JWT mismatch · recipes failing silently · a lot of manual copying
+<div class="pt-10 max-w-2xl mx-auto flex flex-wrap gap-3 justify-center">
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Env vars not propagating</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Convex prod ≠ dev</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Clerk JWT mismatch</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Recipes failing silently</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Lots of manual copying</span>
 </div>
 
 </v-click>
@@ -162,10 +179,14 @@ At the end of 4 hours we had:
 
 <div class="pt-4 text-lg max-w-2xl mx-auto text-left">
 
+<v-clicks>
+
 - Backend auth checks commented out (`tempUserId` hack in `addIngredient`)
 - Clerk JWT issuer hardcoded
 - `ConvexClientProvider` duplicated across 4 files
 - Env vars manually copied around
+
+</v-clicks>
 
 </div>
 
@@ -251,7 +272,11 @@ Describe the loop, don't oversell. The artifacts are real and on disk in the pan
 
 </div>
 
+<v-click>
+
 <div class="pt-10 text-sm opacity-60 text-center">All on 2026-04-20.</div>
+
+</v-click>
 
 <!--
 Three feature ships in a week. Pattern, not anecdote. The "all on 2026-04-20" line is true and a little funny — the work was concentrated. (Verify exact commit counts pre-talk from `git log upstream/main` on the pantry-party repo.)
@@ -329,13 +354,19 @@ const recipes = provider === "claude"
 ```
 ````
 
-Schema field · `@anthropic-ai/sdk` · UI toggle · provider badge on each recipe card.
+<div class="pt-2 text-base opacity-80 max-w-2xl">
 
-<div class="pt-4 text-sm opacity-60 italic">
-We used Claude Code to add Claude support.
+- Schema field
+- `@anthropic-ai/sdk`
+- UI toggle
+- Provider badge on each recipe card
+
 </div>
 
+
 <!--
+We used Claude Code to add Claude support.
+
 Most demo-friendly feature — the audience will see the badges flip live in the demo. Meta-aside lands in one breath; don't dwell.
 -->
 
@@ -394,31 +425,36 @@ More time designing. Less time plumbing.
 </div>
 
 <!--
-Single observation. Don't make it a thesis — the features have already done the arguing. (Final wording per spec Open Question #4: alternatives are "The shift wasn't model IQ; it was process rigor." or "More time designing, less time plumbing." Pick before the talk.)
+"The shift wasn't model IQ; it was process rigor."
+
+"More time designing, less time plumbing."
+
+"Less stitiching, more reading."
+
+"The unit changed from files to diffs."
 -->
 
 ---
 layout: center
+class: text-center
 ---
 
 <script setup>
 import QrcodeVue from 'qrcode.vue'
-const roomUrl = 'https://pantryparty.lol/room/XXXX'
+const roomUrl = 'https://pantryparty.lol/room/kn7cgb38w09b5qtfbxqzscsq8185ndtn'
 </script>
 
 # Try it yourself
 
-<div class="grid grid-cols-2 gap-12 items-center pt-4">
-  <div>
-    <div class="w-72 mx-auto rounded bg-white p-4 flex items-center justify-center">
-      <QrcodeVue :value="roomUrl" :size="256" level="H" />
-    </div>
-    <div class="text-center pt-4 text-xl font-mono">
-      {{ roomUrl.replace('https://', '') }}
-    </div>
-    <div class="text-center pt-2 text-sm opacity-60">
-      Sign up (username / password), join the room, add ingredients.
-    </div>
+<div class="pt-4">
+  <div class="w-72 mx-auto rounded bg-white p-4 flex items-center justify-center">
+    <QrcodeVue :value="roomUrl" :size="256" level="H" />
+  </div>
+  <div class="text-center pt-4 text-xl font-mono">
+    {{ roomUrl.replace('https://', '') }}
+  </div>
+  <div class="text-center pt-2 text-sm opacity-60">
+    Sign up (username / password), join the room, add ingredients.
   </div>
 </div>
 
@@ -440,9 +476,9 @@ layout: center
 
 **Pantry Party** — [pantryparty.lol](https://pantryparty.lol)
 
-**Source** — github.com/austingalyon/pantry-party
+**Source** — [github.com/austingalyon/pantry-party](https://github.com/austingalyon/pantry-party)
 
-**This deck** — [deck URL — fill in post-deploy]
+**This deck** — [pantry-party-presentation.netlify.app](https://pantry-party-presentation.netlify.app)
 
 </div>
 
