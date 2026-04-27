@@ -74,8 +74,6 @@ Build an app that's so delightful, you can't help but share it
 - **4 hours** to build
 - Ship something **shareable**
 
-<div class="pt-8 text-sm opacity-60">Full-stack challenge episode</div>
-
 <!--
 Quick primer on the CodeTV format. Don't dwell — audience gets the shape.
 -->
