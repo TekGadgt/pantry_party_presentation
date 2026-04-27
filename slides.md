@@ -421,7 +421,13 @@ More time designing. Less time plumbing.
 </div>
 
 <!--
-Single observation. Don't make it a thesis — the features have already done the arguing. (Final wording per spec Open Question #4: alternatives are "The shift wasn't model IQ; it was process rigor." or "More time designing, less time plumbing." Pick before the talk.)
+"The shift wasn't model IQ; it was process rigor."
+
+"More time designing, less time plumbing."
+
+"Less stitiching, more reading."
+
+"The unit changed from files to diffs."
 -->
 
 ---
