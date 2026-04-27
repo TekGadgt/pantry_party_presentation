@@ -57,9 +57,9 @@ The original deck has *one* slide of post-episode evidence (auth hardening) plus
 
 ## Slide flow
 
-~15 slides + 1 hidden backup. Speaker leans are soft; handoffs fluid.
+~15 slides + 1 hidden backup. No hard speaker sections — handoffs are felt out live.
 
-### Opening (~3 min, both)
+### Opening (~3 min)
 
 **1. Title — "670K people watched us vibe code"**
 Speaker names + NorfolkJS. CodeTV episode reference visible (view-count visual or episode screenshot). Lean into the meetup title — it's the hook the room came for. Pivot fast to substance so it doesn't read as clout-chasing.
@@ -73,7 +73,7 @@ Pantry Party in one paragraph: pool ingredients, AI recipes, vote, real-time. Sc
 **4. The Convex pivot**
 "Just use plain websockets" → "Have you tried Convex?" The architectural turn from the morning. Acknowledge in one breath that episode-watchers have seen this; keep it because it's the human moment that earns the rest.
 
-### What 4 hours actually looks like (~2 min, Austin leads)
+### What 4 hours actually looks like (~2 min)
 
 **5. The chaotic-energy slide**
 B-roll or compressed war stories — env vars not propagating, Convex prod ≠ dev, Clerk JWT mismatched, recipes failing silently on prod. One beat: *"everything was on fire in the last 30 minutes."* Compresses current slides 7–11 into a single slide; the second B-roll slide (current slide 12, "Final push clip") is also dropped. **Reframing:** drops Copilot-specific attribution to keep the whole talk tooling-neutral; "AI scaffolding gets the boxes, not the wires" is the implicit subtext, not a claim about a brand.
@@ -83,7 +83,7 @@ Honest framing of the MVP at end-of-episode: backend auth checks commented out, 
 
 This is the pivot slide.
 
-### Five months later (~7 min, Ryan leads)
+### Five months later (~7 min)
 
 **7. Five months later**
 Single transition slide. "We kept building." Sets up that the rest of the talk is post-episode work the audience hasn't seen. (Title can be phrased "Five months later" or "A week ago" — both are technically true; the former matches the Nov-2025 → Apr-2026 framing the audience expects from the episode reference.)
@@ -148,7 +148,7 @@ Single observation slide. One framing line — examples to choose from:
 
 Pick one. Don't make it a thesis — make it an observation. The features have already done the arguing.
 
-### Live demo (~6–8 min, either driver)
+### Live demo (~6–8 min)
 
 **14. Try it yourself**
 Pre-seeded room. QR + printed URL. Live iframe of `pantryparty.lol` so the audience sees real-time updates even before signing up. Audience joins, adds ingredients, votes.
@@ -217,7 +217,7 @@ Same as the original spec's design:
 - Full end-to-end run from both laptops, time each section. Cut content if over by >3 min.
 - **Provider-toggle smoke test ~1h before talk:** generate one set with each provider in the demo room; confirm both succeed and the badge renders.
 - Audience-demo concurrency dry-run: 10–15 simultaneous joins via incognito/secondary devices the week before.
-- Speaker handoff rehearsal: practice the soft Austin-leads-build / Ryan-leads-features split (or whatever split lands — see Open Questions).
+- Run through the deck out loud at least once each before doing it together — handoffs are felt out live, but each speaker should know all the slides cold.
 
 ## Asset checklist (delta from original spec)
 
@@ -234,11 +234,10 @@ Same as the original spec's design:
 
 ## Open questions
 
-1. **Speaker split.** Original deck has soft Austin-leads-build / Ryan-leads-tooling-sidebar handoff. New structure has the workflow + three features as the substance, which is implicitly Ryan-heavy. Options: (a) Ryan drives slides 7–13, Austin drives slides 5–6 + the demo; (b) split feature deep-dives between speakers (e.g., Austin owns provider toggle, Ryan owns auth + dietary); (c) something else. **Decide before rehearsal.**
-2. **Stack roll-call slide.** Current deck has a slide-6 stack grid (Astro / React / Convex / Clerk / OpenAI / Tailwind). Restructured deck cuts it for tightness; stack components surface organically through the workflow + feature slides anyway. Keep, cut, or absorb into another slide? Default in this spec: cut.
-3. **Title slide visual.** View-count number ("670K") prominent, or episode screenshot prominent, or both? Does Austin want input on the visual treatment?
-4. **"What this changed" line — final wording.** Three options listed in slide 13. Pick one before drafting.
-5. **"Five months later" vs "A week ago"** for slide 7. Both technically true. Five-months framing matches the audience's mental model from the episode reference; "a week ago" is more arresting. Check with Austin.
+1. **Stack roll-call slide.** Current deck has a slide-6 stack grid (Astro / React / Convex / Clerk / OpenAI / Tailwind). Restructured deck cuts it for tightness; stack components surface organically through the workflow + feature slides anyway. Keep, cut, or absorb into another slide? Default in this spec: cut.
+2. **Title slide visual.** View-count number ("670K") prominent, or episode screenshot prominent, or both? Does Austin want input on the visual treatment?
+3. **"What this changed" line — final wording.** Three options listed in slide 13. Pick one before drafting.
+4. **"Five months later" vs "A week ago"** for slide 7. Both technically true. Five-months framing matches the audience's mental model from the episode reference; "a week ago" is more arresting. Check with Austin.
 
 ## Out of scope
 
