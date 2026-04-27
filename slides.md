@@ -20,18 +20,6 @@ Hook. Reference the meetup title and the episode. Pivot fast — build recap is 
 -->
 
 ---
-layout: image
-image: /photos/placeholder-hero.svg
-class: text-white
----
-
-# <span class="bg-black/60 px-4 py-2 rounded">4 hours. One demo. Whatever we could ship.</span>
-
-<!--
-CodeTV episode. 4 hours was all we had. Set the mindset before the mechanics.
--->
-
----
 layout: center
 ---
 
