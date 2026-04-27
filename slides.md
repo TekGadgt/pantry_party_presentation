@@ -432,26 +432,25 @@ More time designing. Less time plumbing.
 
 ---
 layout: center
+class: text-center
 ---
 
 <script setup>
 import QrcodeVue from 'qrcode.vue'
-const roomUrl = 'https://pantryparty.lol/room/XXXX'
+const roomUrl = 'https://pantryparty.lol/room/kn7cgb38w09b5qtfbxqzscsq8185ndtn'
 </script>
 
 # Try it yourself
 
-<div class="grid grid-cols-2 gap-12 items-center pt-4">
-  <div>
-    <div class="w-72 mx-auto rounded bg-white p-4 flex items-center justify-center">
-      <QrcodeVue :value="roomUrl" :size="256" level="H" />
-    </div>
-    <div class="text-center pt-4 text-xl font-mono">
-      {{ roomUrl.replace('https://', '') }}
-    </div>
-    <div class="text-center pt-2 text-sm opacity-60">
-      Sign up (username / password), join the room, add ingredients.
-    </div>
+<div class="pt-4">
+  <div class="w-72 mx-auto rounded bg-white p-4 flex items-center justify-center">
+    <QrcodeVue :value="roomUrl" :size="256" level="H" />
+  </div>
+  <div class="text-center pt-4 text-xl font-mono">
+    {{ roomUrl.replace('https://', '') }}
+  </div>
+  <div class="text-center pt-2 text-sm opacity-60">
+    Sign up (username / password), join the room, add ingredients.
   </div>
 </div>
 
