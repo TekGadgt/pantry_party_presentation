@@ -387,6 +387,10 @@ const roomUrl = 'https://pantryparty.lol/room/XXXX'
 
 <!--
 Read the URL out loud. Give the audience ~30s to scan. Then start driving: add pre-seed ingredients, trigger recipes, vote live. The iframe reflects the live site so they can see real-time updates even before they've signed up.
+
+Climax: mid-demo, flip the AI provider toggle. Generate again with the same ingredients. Audience sees the provider badges on the new cards. This is the moment that makes the post-episode work tangible — the thing they'd otherwise have to take our word for.
+
+If either provider is misbehaving (smoke-tested ~1h before talk per rehearsal plan), narrate around it: "we'd flip the toggle here — here's what it would have looked like" and show the backup clip if needed (overview → slide 16).
 -->
 
 ---
