@@ -82,7 +82,9 @@ Quick primer on the CodeTV format. Don't dwell — audience gets the shape.
 layout: two-cols
 ---
 
-# What we shipped on camera
+<div class="h-full flex flex-col justify-center">
+
+# What we shipped
 
 Pantry Party — collaborative rooms where people:
 
@@ -91,9 +93,15 @@ Pantry Party — collaborative rooms where people:
 - 🗳️ Vote on favorites
 - ⚡ See updates in real time
 
+</div>
+
 ::right::
 
+<div class="h-full flex flex-col justify-center">
+
 <img src="/photos/Pantry-Party-Screenshot.png" class="rounded-lg shadow-xl" style="margin-left: 1em;"/>
+
+</div>
 
 <!--
 Past tense — this is what shipped on the episode. Audience may already know it from the show. If a video clip is ready, swap image src to /video/<file>.mp4 with a <video> tag.
