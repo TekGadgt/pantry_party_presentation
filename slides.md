@@ -109,117 +109,32 @@ Compress the build chaos into two beats. AI scaffolding got the boxes; integrati
 -->
 
 ---
+layout: center
 ---
 
-# What Copilot agent mode nailed
+# We shipped. Barely.
 
-Each of these landed on the first try:
-
-- Astro page + layout scaffolding
-- Convex `schema.ts` — rooms, ingredients, recipes, votes
-- Clerk setup — middleware, protected routes
-- OpenAI recipe-generation action
-
-<v-click>
-
-<div class="pt-8 text-xl opacity-80">
-Isolated pieces? Excellent.
+<div class="pt-6 text-lg opacity-80 max-w-2xl mx-auto text-left">
+At the end of 4 hours we had:
 </div>
 
-</v-click>
+<div class="pt-4 text-lg max-w-2xl mx-auto text-left">
 
-<!--
-Don't dunk on Copilot. The scaffolding work genuinely saved us hours.
--->
+- Backend auth checks commented out (`tempUserId` hack in `addIngredient`)
+- Clerk JWT issuer hardcoded
+- `ConvexClientProvider` duplicated across 4 files
+- Env vars manually copied around
 
----
----
-
-# Where it fell apart
-
-```mermaid
-graph LR
-  Clerk -->|"auth 🔴"| Convex
-  UI -->|"query 🔴"| Convex
-  Convex -->|"action 🔴"| OpenAI
-  OpenAI -->|"recipes 🔴"| Convex
-  Convex -->|"real-time 🔴"| UI
-```
-
-The boxes worked. The **wiring** between them is where we bled hours.
-
-<!--
-The pivot slide of the build section. Emphasize: scaffolding good, integration hard.
--->
-
----
----
-
-# Example: auth token didn't flow
-
-Copilot scaffolded Clerk and Convex auth config separately. Wiring them together:
-
-````md magic-move
-```ts
-// convex/auth.config.ts
-export default {
-  providers: [
-    {
-      domain: "clerk-jwt-issuer-hardcoded-here",
-      applicationID: "convex",
-    },
-  ],
-};
-```
-
-```ts
-// convex/auth.config.ts
-export default {
-  providers: [
-    {
-      domain: process.env.CLERK_JWT_ISSUER_DOMAIN,
-      applicationID: "convex",
-    },
-  ],
-};
-```
-````
-
-One env var. Twenty minutes of Googling.
-
-<!--
-Concrete, representative. Not the only integration bug, but the cleanest to show on stage.
--->
-
----
----
-
-# The last 30 minutes
-
-- Env vars not propagating to Netlify
-- Convex prod deployment ≠ dev deployment
-- Clerk JWT issuer URL mismatched between environments
-- Recipe generation failing silently on prod
+</div>
 
 <v-click>
 
-<div class="pt-6 text-xl">What fixed it: a lot of manual copying.</div>
+<div class="pt-10 text-2xl text-center">The episode ended here. The talk doesn't.</div>
 
 </v-click>
 
 <!--
-War stories. Keep it tight and a little funny. Don't wallow.
--->
-
----
-layout: center
-class: bg-black text-white
----
-
-<div class="opacity-60 text-sm">[ Final push clip placeholder — swap with &lt;video src="/video/codetv-final-push.mp4" autoplay muted loop /&gt; ]</div>
-
-<!--
-Ship-it energy. Transition out of the build segment and into "then vs. now."
+Honest framing. The MVP shipped, but it shipped rough. This is the pivot — episode ends here, talk doesn't.
 -->
 
 ---
