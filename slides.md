@@ -84,25 +84,6 @@ Biggest moment of hour one. The whole architecture swung on this suggestion.
 
 ---
 layout: center
----
-
-# The stack
-
-<div class="grid grid-cols-3 gap-8 pt-8 text-2xl">
-  <div>Astro</div>
-  <div>React</div>
-  <div>Convex</div>
-  <div>Clerk</div>
-  <div>OpenAI</div>
-  <div>Tailwind</div>
-</div>
-
-<!--
-Name them fast. Hand off to Austin for the build segment.
--->
-
----
-layout: center
 class: bg-black text-white
 ---
 
