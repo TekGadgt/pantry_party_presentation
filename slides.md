@@ -108,7 +108,7 @@ Past tense — this is what shipped on the episode. Audience may already know it
 -->
 
 ---
-layout: quote
+layout: center
 ---
 
 # "Just use plain websockets."
@@ -117,7 +117,7 @@ _— us, that morning_
 
 <v-click>
 
-## "Have you tried Convex?"
+# "Have you tried Convex?"
 
 _— Jason, 15 minutes in_
 
@@ -125,7 +125,7 @@ _— Jason, 15 minutes in_
 
 <v-click>
 
-We adopted a real-time database neither of us had touched.
+<div class="text-lg opacity-75 italic">We adopted a real-time database neither of us had touched.</div>
 
 </v-click>
 
