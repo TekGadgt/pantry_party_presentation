@@ -87,10 +87,25 @@ layout: center
 class: bg-black text-white
 ---
 
-<div class="opacity-60 text-sm">[ B-roll clip placeholder — swap with &lt;video src="/video/codetv-broll.mp4" autoplay muted loop /&gt; when clip is ready ]</div>
+# What 4 hours actually looks like
+
+<div class="pt-8 text-2xl">
+  <div>First 3 hours: scaffolding worked.</div>
+  <v-click>
+    <div class="pt-6">Last 30 minutes: everything was on fire.</div>
+  </v-click>
+</div>
+
+<v-click>
+
+<div class="pt-8 text-base opacity-70 max-w-2xl mx-auto text-left">
+  Env vars not propagating · Convex prod ≠ dev · Clerk JWT mismatch · recipes failing silently · a lot of manual copying
+</div>
+
+</v-click>
 
 <!--
-Let the clip play for ~15s. Sets room energy before we start talking shop.
+Compress the build chaos into two beats. AI scaffolding got the boxes; integration is where 4-hour builds bleed. If a CodeTV B-roll clip becomes available, swap the layout for a `<video>` tag and let the chaos play under the text.
 -->
 
 ---
