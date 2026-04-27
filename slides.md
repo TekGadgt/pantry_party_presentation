@@ -142,58 +142,77 @@ layout: center
 class: text-center
 ---
 
-# Then → Now
+# Five months later
 
-<div class="text-sm opacity-60 mt-8">What changed in five months</div>
+<div class="text-xl opacity-60 mt-8">We kept building.</div>
 
 <!--
-Beat pause. Pivot into the second half of the talk. Ryan takes over (soft lean).
+Beat pause. Pivot into post-episode work. The audience hasn't seen any of the rest yet. (Phrasing alternative per spec Open Question #4: "A week ago" — more arresting but loses the Nov-2025 → Apr-2026 framing the audience expects from the episode reference.)
 -->
 
 ---
-layout: two-cols
 ---
 
-# Then
+# The workflow
 
-**Nov 2025**
+Spec → Plan → Commits.
 
-GitHub Copilot agent mode
+```text
+docs/superpowers/specs/
+  2026-04-20-auth-hardening-design.md
+  2026-04-20-ai-provider-toggle-design.md
+  2026-04-20-user-dietary-profiles-design.md
+docs/superpowers/plans/
+  2026-04-20-auth-hardening.md
+  2026-04-20-ai-provider-toggle.md
+  2026-04-20-user-dietary-profiles.md
+```
 
-- Mix of Anthropic + OpenAI models under the hood
-- Best tool available that day
-- Great at generating files
-- Struggled to cross systems
-
-::right::
-
-# Now
-
-**Apr 2026**
-
-Claude Code
-
-- Daily driver
-- Plans, specs, commits, reviews
-- Same class of models, better harness
+<div class="pt-4 text-base opacity-70">
+Each feature: a written spec, a step-by-step plan, then small narrated commits.
+</div>
 
 <!--
-Don't overstate. Same models, different ergonomics. Set up the next slide.
+Describe the loop, don't oversell. The artifacts are real and on disk in the pantry-party repo. Shiki will syntax-color the directory tree as a `text` block — fine.
 -->
 
 ---
-layout: center
 ---
 
-# The gap that closed
+# Three features in a week
 
-<div class="text-6xl py-8 font-bold">integration</div>
+<div class="grid grid-cols-3 gap-6 pt-8 text-base">
 
-The exact thing that cost us hours during the build  
-is the thing that's most different now.
+<div>
+
+### Auth hardening
+<div class="opacity-60 text-sm pt-1">spec · plan · ~14 commits</div>
+<div class="pt-3 opacity-90">Proper auth, env-driven config, deduplicated provider wrapper.</div>
+
+</div>
+
+<div>
+
+### AI provider toggle
+<div class="opacity-60 text-sm pt-1">spec · plan · ~16 commits</div>
+<div class="pt-3 opacity-90">Claude + OpenAI, switchable per room, provider badge on cards.</div>
+
+</div>
+
+<div>
+
+### Dietary profiles
+<div class="opacity-60 text-sm pt-1">spec · plan · ~9 commits + 1 docs</div>
+<div class="pt-3 opacity-90">Persistent user preferences, merged into recipe prompts.</div>
+
+</div>
+
+</div>
+
+<div class="pt-10 text-sm opacity-60 text-center">All on 2026-04-20.</div>
 
 <!--
-The thesis slide of the sidebar. Deliver it slowly. Pause after "integration."
+Three feature ships in a week. Pattern, not anecdote. The "all on 2026-04-20" line is true and a little funny — the work was concentrated. (Verify exact commit counts pre-talk from `git log upstream/main` on the pantry-party repo.)
 -->
 
 ---
