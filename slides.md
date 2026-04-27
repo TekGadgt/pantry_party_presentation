@@ -149,8 +149,12 @@ class: bg-black text-white
 
 <v-click>
 
-<div class="pt-8 text-base opacity-70 max-w-2xl mx-auto text-left">
-  Env vars not propagating · Convex prod ≠ dev · Clerk JWT mismatch · recipes failing silently · a lot of manual copying
+<div class="pt-10 max-w-2xl mx-auto flex flex-wrap gap-3 justify-center">
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Env vars not propagating</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Convex prod ≠ dev</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Clerk JWT mismatch</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Recipes failing silently</span>
+  <span class="px-3 py-1 rounded-full text-sm bg-red-500/10 text-red-300 border border-red-500/40">Lots of manual copying</span>
 </div>
 
 </v-click>
