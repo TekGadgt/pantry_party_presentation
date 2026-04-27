@@ -29,7 +29,7 @@ layout: about-me
 
 helloMsg: Hey Y'all!
 name: Austin Galyon
-imageSrc: <image url>
+imageSrc: /photos/ag-webdev-cropped.jpeg
 position: left
 job: Software Engineer
 line1: 
