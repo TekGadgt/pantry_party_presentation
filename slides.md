@@ -268,7 +268,11 @@ Describe the loop, don't oversell. The artifacts are real and on disk in the pan
 
 </div>
 
+<v-click>
+
 <div class="pt-10 text-sm opacity-60 text-center">All on 2026-04-20.</div>
+
+</v-click>
 
 <!--
 Three feature ships in a week. Pattern, not anecdote. The "all on 2026-04-20" line is true and a little funny — the work was concentrated. (Verify exact commit counts pre-talk from `git log upstream/main` on the pantry-party repo.)
