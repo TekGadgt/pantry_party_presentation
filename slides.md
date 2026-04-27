@@ -1,8 +1,9 @@
 ---
-theme: seriph
+theme: the-unnamed
 title: Pantry Party — NorfolkJS
 info: 670K people watched us vibe code (and what we did about it)
 class: text-center
+background: /photos/qYx8NX49OS8-HD.jpg
 ---
 
 # 670K people watched us vibe code
@@ -16,7 +17,11 @@ class: text-center
 </div>
 
 <!--
-Hook. Reference the meetup title and the episode. Pivot fast — build recap is short, the post-episode work is the substance. If a CodeTV thumbnail screenshot becomes available, swap to a `layout: image` with the screenshot as backdrop.
+Hook. Reference the meetup title and the episode. 
+
+Pivot fast — build recap is short, the post-episode work is the substance. 
+
+If a CodeTV thumbnail screenshot becomes available, swap to a `layout: image` with the screenshot as backdrop.
 -->
 
 ---

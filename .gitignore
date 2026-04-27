@@ -5,3 +5,5 @@ dist
 *.pdf
 .vite
 .slidev
+.slides.md.swp
+.specstory/
