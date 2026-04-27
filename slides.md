@@ -1,20 +1,22 @@
 ---
 theme: seriph
 title: Pantry Party — NorfolkJS
-info: A 4-hour full-stack build and what changed in 5 months
+info: 670K people watched us vibe code (and what we did about it)
 class: text-center
 ---
 
-# Pantry Party
+# 670K people watched us vibe code
 
-A 4-hour build, five months later
+<div class="pt-6 text-2xl opacity-90">
+  Pantry Party · 4 hours · CodeTV
+</div>
 
 <div class="pt-12 opacity-75 text-xl">
   Ryan · Austin · NorfolkJS
 </div>
 
 <!--
-Welcome. Intros. We'll walk you through a 4-hour full-stack build and what's changed in the tools since.
+Hook. Reference the meetup title and the episode. Pivot fast — build recap is short, the post-episode work is the substance. If a CodeTV thumbnail screenshot becomes available, swap to a `layout: image` with the screenshot as backdrop.
 -->
 
 ---
