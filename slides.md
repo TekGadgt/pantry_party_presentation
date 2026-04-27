@@ -3,7 +3,7 @@ theme: the-unnamed
 title: Pantry Party — NorfolkJS
 info: 670K people watched us vibe code (and what we did about it)
 class: text-center
-background: /photos/qYx8NX49OS8-HD.jpg
+background: /photos/youtube-thumbnail.jpg
 ---
 
 # 670K people watched us vibe code
@@ -63,9 +63,12 @@ Hi I'm Ryan, etc
 
 ---
 layout: center
+# layout: default
+# background: /photos/251114-webdev-s2e13-4G7A2707.jpg
 ---
 
-# CodeTV's rules
+# CodeTV's Web Dev Challenge
+Build an app that's so delightful, you can't help but share it 
 
 - **30 minutes** to plan
 - **4 hours** to build
@@ -92,7 +95,7 @@ Pantry Party — collaborative rooms where people:
 
 ::right::
 
-<img src="/photos/placeholder-hero.svg" class="rounded-lg shadow-xl" />
+<img src="/photos/Pantry-Party-Screenshot.png" class="rounded-lg shadow-xl" style="margin-left: 1em;"/>
 
 <!--
 Past tense — this is what shipped on the episode. Audience may already know it from the show. If a video clip is ready, swap image src to /video/<file>.mp4 with a <video> tag.
