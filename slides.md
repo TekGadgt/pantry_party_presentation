@@ -378,11 +378,6 @@ const roomUrl = 'https://pantryparty.lol/room/XXXX'
       Sign up (username / password), join the room, add ingredients.
     </div>
   </div>
-  <iframe
-    src="https://pantryparty.lol/"
-    class="w-full h-96 rounded-lg border border-gray-300"
-    sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
-  />
 </div>
 
 <!--
